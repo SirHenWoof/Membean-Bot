@@ -128,12 +128,8 @@ clearTimeout(interval.click);
 clearTimeout(interval.deltest);
 bool.bot = false; 
 }
-} function press() {
-document.Pass.click();
-console.log("I Know This");
-set("test");
+}
 
-} 
 
 
 function start() {
