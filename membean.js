@@ -12,14 +12,12 @@ var object = {
 	"div": "",
 	"button1": "",
 }
-
 object.div = document.createElement("DIV");
 object.div.style.width = "500px";
 object.div.style.height = "50px";
 object.div.style.border = "3px solid black";
 object.div.id = "div";
 object.div.style.background = "gray";
-
 object.button2 = document.createElement("BUTTON");
 object.button2.style.width = "100px";
 object.button2.style.height = "25px";
@@ -28,7 +26,6 @@ object.button2.style.background = "white";
 object.button2.id = "button2";
 object.button2.innerHTML = "Skip: Off";
 object.button2.setAttribute("onclick", "skip()");
-
 object.button1 = document.createElement("BUTTON");
 object.button1.style.width = "100px";
 object.button1.style.height = "25px";
@@ -37,11 +34,9 @@ object.button1.style.background = "white";
 object.button1.id = "button1";
 object.button1.innerHTML = "Off";
 object.button1.setAttribute("onclick", "start()");
-
 document.body.appendChild(object.div);
 document.getElementById("div").appendChild(object.button1);
 document.getElementById("div").appendChild(object.button2);
-
 function test() {
 	if(bool.bot == true) {
 		if(document.Pass) {
@@ -63,7 +58,7 @@ function test() {
 	}
 } function set(type) {
 	if(type == "click") {//waits time to click
-		let rand = Math.floor(Math.random() * (26 - 16)) + 5; 
+		let rand = Math.floor(Math.random() * (26 - 22)) + 5; 
 		
 		rand = rand * 1000;
 		console.log(rand);
@@ -80,7 +75,7 @@ function test() {
 	document.Pass.click();
 	console.log("Clicked");
 	set("test");
-	
+
 } 
 
 function test() {
@@ -89,48 +84,35 @@ function test() {
 			bool.skip = false;
 			console.log("Pass element found");
 			set("click");
-		} else if (document.getElementById("ikt") && bool.skip == true) {
-	set("stop");
-	let x = document.querySelectorAll("#choice-section li");
-	console.log("ikt");
-	x[0].click();
-	x[1].click();
-	x[2].click();
-	document.getElementById("ikt").click();
-	set("test");
-}
-else if (document.getElementById("next-btn") && bool.skip == true) {
-	set("stop");
-	let x = document.querySelectorAll("#choice-section li");
-	console.log("next button");
-	x[0].click();
-	x[1].click();
-	x[2].click();
-	document.getElementById("next-btn").click();
-	set("test");
-}
-else {
-	console.log("No elements found");
-}
-}
+		} else if (bool.skip == true) {
+			set("stop");
+			document.getElementById("ikt").click();
+			set("click");
+		} else {
+			console.log("No elements found");
+		}
+	}
 } function set(type) {
-if(type == "click") {//waits time to click
-let rand = Math.floor(Math.random() * (15)); 
+	if(type == "click") {//waits time to click
+		let rand = Math.floor(Math.random() * (26 - 22)) + 5; 
 
-rand = rand * 1000;
-console.log(rand);
-interval.click = setTimeout(press, rand);
+		rand = rand * 1000;
+		console.log(rand);
+		interval.click = setTimeout(press, rand);
 
-} else if (type == "test") {//starts testing after 1 second
-interval.deltest = setTimeout(function x(){bool.skip = true;}, 1000);
-} else if (type == "stop") { //CLEAR ALL TIMEOUTS AND INTERVALS
-clearTimeout(interval.click);
-clearTimeout(interval.deltest);
-bool.bot = false; 
-}
-}
+	} else if (type == "test") {//starts testing after 1 second
+		interval.deltest = setTimeout(function x(){bool.skip = true;}, 1000);
+	} else if (type == "stop") { //CLEAR ALL TIMEOUTS AND INTERVALS
+		clearTimeout(interval.click);
+		clearTimeout(interval.deltest);
+		bool.bot = false; 
+	}
+} function press() {
+	document.Pass.click();
+	console.log("I Know This");
+	set("test");
 
-
+} 
 
 function start() {
 	if(bool.on == true) {
@@ -158,5 +140,4 @@ function start() {
 		document.getElementById("button2").innerHTML = "Skip: On";
 	}
 }
-
 interval.test = setInterval(test, 1);
