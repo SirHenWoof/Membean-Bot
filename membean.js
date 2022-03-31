@@ -1,3 +1,4 @@
+
 var interval = {
 	"test": "",
 	"click": "",
@@ -63,7 +64,7 @@ function test() {
 	}
 } function set(type) {
 	if(type == "click") {//waits time to click
-		let rand = Math.floor(Math.random() * (26 - 16)) + 5; 
+		let rand = Math.floor(Math.random() * (26 - 15)) + 10; 
 		
 		rand = rand * 1000;
 		console.log(rand);
@@ -82,54 +83,6 @@ function test() {
 	set("test");
 	
 } 
-
-function test() {
-	if(bool.skip == true) {
-		if(document.Pass) {
-			bool.skip = false;
-			console.log("Pass element found");
-			set("click");
-		} else if (document.getElementById("ikt") && bool.skip == true) {
-	set("stop");
-	let x = document.querySelectorAll("#choice-section li");
-	console.log("ikt");
-	x[0].click();
-	x[1].click();
-	x[2].click();
-	document.getElementById("ikt").click();
-	set("test");
-}
-else if (document.getElementById("next-btn") && bool.skip == true) {
-	set("stop");
-	let x = document.querySelectorAll("#choice-section li");
-	console.log("next button");
-	x[0].click();
-	x[1].click();
-	x[2].click();
-	document.getElementById("next-btn").click();
-	set("test");
-}
-else {
-	console.log("No elements found");
-}
-}
-} function set(type) {
-if(type == "click") {//waits time to click
-let rand = Math.floor(Math.random() * (15)); 
-
-rand = rand * 1000;
-console.log(rand);
-interval.click = setTimeout(press, rand);
-
-} else if (type == "test") {//starts testing after 1 second
-interval.deltest = setTimeout(function x(){bool.skip = true;}, 1000);
-} else if (type == "stop") { //CLEAR ALL TIMEOUTS AND INTERVALS
-clearTimeout(interval.click);
-clearTimeout(interval.deltest);
-bool.bot = false; 
-}
-}
-
 
 
 function start() {
