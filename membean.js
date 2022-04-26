@@ -1,4 +1,3 @@
-
 var interval = {
 	"test": "",
 	"click": "",
@@ -13,12 +12,14 @@ var object = {
 	"div": "",
 	"button1": "",
 }
+
 object.div = document.createElement("DIV");
 object.div.style.width = "500px";
 object.div.style.height = "50px";
 object.div.style.border = "3px solid black";
 object.div.id = "div";
 object.div.style.background = "gray";
+
 object.button2 = document.createElement("BUTTON");
 object.button2.style.width = "100px";
 object.button2.style.height = "25px";
@@ -27,6 +28,7 @@ object.button2.style.background = "white";
 object.button2.id = "button2";
 object.button2.innerHTML = "Skip: Off";
 object.button2.setAttribute("onclick", "skip()");
+
 object.button1 = document.createElement("BUTTON");
 object.button1.style.width = "100px";
 object.button1.style.height = "25px";
@@ -35,9 +37,11 @@ object.button1.style.background = "white";
 object.button1.id = "button1";
 object.button1.innerHTML = "Off";
 object.button1.setAttribute("onclick", "start()");
+
 document.body.appendChild(object.div);
 document.getElementById("div").appendChild(object.button1);
 document.getElementById("div").appendChild(object.button2);
+
 function test() {
 	if(bool.bot == true) {
 		if(document.Pass) {
@@ -59,7 +63,7 @@ function test() {
 	}
 } function set(type) {
 	if(type == "click") {//waits time to click
-		let rand = Math.floor(Math.random() * (26 - 22)) + 10; 
+		let rand = Math.floor(Math.random() * (26 - 15)); 
 		
 		rand = rand * 1000;
 		console.log(rand);
@@ -76,7 +80,7 @@ function test() {
 	document.Pass.click();
 	console.log("Clicked");
 	set("test");
-
+	
 } 
 
 
