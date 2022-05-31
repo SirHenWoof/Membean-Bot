@@ -92,25 +92,25 @@ function start() {
 		set("stop");
 		console.log("Bot Inactive");
 		document.getElementById("button1").innerHTML = "Off";
-		setTimeout(() => {  start(); }, 3000);
+		setTimeout(() => {  start(); }, 1000);
 	} else if (bool.on == false) {
 		bool.on = true;
 		bool.bot = true;
 		console.log("Bot Active");
 		document.getElementById("button1").innerHTML = "On";
-		setTimeout(() => {  start(); }, 3000);
+		setTimeout(() => {  start(); }, 1000);
 	}
 } function skip() {
 	if(bool.skip == true) {
 		bool.skip = false;
 		console.log("Not skipping new words");
 		document.getElementById("button2").innerHTML = "Skip: Off";
-		setTimeout(() => {  skip(); }, 3000);
+		setTimeout(() => {  skip(); }, 1000);
 	} else if (bool.skip == false) {
 		bool.skip = true;
 		console.log("Skipping new words");
 		document.getElementById("button2").innerHTML = "Skip: On";
-		setTimeout(() => {  skip(); }, 3000);
+		setTimeout(() => {  skip(); }, 1000);
 	}
 }
 
