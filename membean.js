@@ -63,7 +63,7 @@ function test() {
 	}
 } function set(type) {
 	if(type == "click") {//waits time to click
-		let rand = Math.floor(Math.random() * (26 - 15)); 
+		let rand = Math.floor(Math.random() * (26 - 24)); 
 		
 		rand = rand * 1000;
 		console.log(rand);
